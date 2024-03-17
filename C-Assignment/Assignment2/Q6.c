@@ -2,7 +2,7 @@
 
 int main()
 {
-	long int  num, reverse=0, reminder=1,temp;
+	long int  num, reverse=0, reminder,temp;
 	printf("Enter the number: ");
 	scanf("%ld", &num);
 	temp=num;
