@@ -1,56 +1,82 @@
 #include<stdio.h>
 
-float calculator(float, char, float);
+ 
+void add();
+void sub();
+void mul();
+void div();
+int acceptNum();
 
-int main()
+
+int main(void)
 {
-	float num1,num2;
-	char opr;
+    int choice;
+    do
+    {
+        printf("\nEnter your choice : 0.Exit 1.Add 2.Sub 3.Mul 4.Div:  ");
+        scanf("%d",&choice);
 
-	printf("\nEnter No.1 : ");
-	scanf("%f",&num1);
-	printf("\nEnter Operand : ");
-	scanf("%*c%c",&opr);
-	printf("\nEnter No.2 : ");
-	scanf("%f",&num2);
-	float result = calculator(num1,opr,num2);
-	printf("\nResult: %.2f\n",result);
+        switch(choice)
+        {
+            case 1:
+                add(); 
+            break;
+            case 2:
+                sub();  
+            break;
+            case 3:
+                mul();  
+            break;
+            case 4:
+                div();  
+            break;
+        }
 
-	return 0;
-}
 
-float calculator(float num1, char opr, float num2)
-{
-	float res;
-	switch(opr)
-	{
-		case '+' : 
-			res = num1 + num2 ;
-		break;
-		
-		case '-' : 
-			res = num1 - num2 ;
-		break;
-		
-		case '*' : 
-			res = num1 * num2 ;
-		break;
-
-		case '/' :
-			if( num2 != 0 )
-			{
-				res = num1 / num2;
-			}
-			else
-				printf("Divide by 0 error.\n");
-		break;
-
-		default : 
-			printf("Invalid Operand \n");
-		break;
-	}
-
-	return res;
+    } while (choice!=0);
+    
+    return 0;
 }
 
 
+int acceptNum()
+{
+    int num;
+    printf("Enter Number : ");
+    scanf("%d",&num);
+    return num;
+}
+void add()
+{
+    int a,b,res;
+    a=acceptNum();
+    b=acceptNum();
+    res = a+b;
+    printf("Addition = %d",res);
+    
+}
+void sub()
+{
+    int a,b,res;
+    a=acceptNum();
+    b=acceptNum();
+    res = a-b;
+    printf("Subtraction = %d",res);
+}
+
+void mul()
+{
+    int a,b,res;
+    a=acceptNum();
+    b=acceptNum();
+    res = a*b;
+    printf("Multiplication = %d",res);
+}
+void div()
+{
+    int a,b,res;
+    a=acceptNum();
+    b=acceptNum();
+    res = a/b;
+    printf("Division = %d",res);
+}
