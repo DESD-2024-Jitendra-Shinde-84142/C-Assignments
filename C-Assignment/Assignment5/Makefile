@@ -1,5 +1,5 @@
 
-TARGET=Q6
+TARGET=Q10
 
 CSRCS= $(TARGET).c
 CSRCS+= accept_print_arr.c
